@@ -130,8 +130,8 @@ function rke.taskFire(vec2)                                                 --Ad
         expendQty = 5,
         expendQtyEnabled = true, 
         }
-    } 
-    controller:setTask(fireTask)                                        
+    }
+    controller:setTask(fireTask)
 end
 
 function cvn.WindCheck() -- works out most carrier relevant information
@@ -1406,7 +1406,6 @@ LLposdegE3 = LLposdegE3 * 60
 local LLposNstring = string.format('%.2i° %.2i\' %.3d\"', LLposfixN, LLposdegN2, LLposdegN3)
 local LLposEstring = string.format('%.3i° %.2i\' %.3d\"', LLposfixE, LLposdegE2, LLposdegE3)
 return LLposNstring, LLposEstring
-/2222
 end
 
 function cvn.location()

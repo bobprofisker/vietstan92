@@ -78,7 +78,7 @@ do
 								notify("Invalid speed: Please enter value from 01 to 30 Knots", 10)
 							end				
 							
-				elseif string.find (event.text, "cms") then 
+				elseif string.find (event.text, "tlam") then 
 								rke.taskFire(mist.utils.makeVec2(event.pos))  
 				--END of SECTION
 				--CYC_carrier.lua END of SECTION for CYC_carrier.lua
@@ -89,13 +89,28 @@ do
 				elseif string.find (event.text, "cas") then 
 					local pointVec3 = mist.utils.makeVec3GL(event.pos)
 					aaa.createAAAzone()  
-				--end of section on call CAS CYC_ocas.lua
+				-- --end of section on call CAS CYC_ocas.lua
 				
 				-- Start of section on CYC_tankers.lua
 				elseif string.find (event.text, "fuel") then 
 					local pointVec3 = mist.utils.makeVec3GL(event.pos)
 					tanker.orbitPoint(pointVec3,"Tanker 1")  
 				--end of section on call CAS CYC_ocas.lua
+				
+				--start of sectoin on CYC_sickAItrainer.lua
+				elseif string.find (event.text, "sa2") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"2") 
+				elseif string.find (event.text, "sa3") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"3")  
+				elseif string.find (event.text, "sa6") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"6") 
+				elseif string.find (event.text, "sa10") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"10")  
+				--end of section  on sick ai trainers 
 				
 				
 				else
