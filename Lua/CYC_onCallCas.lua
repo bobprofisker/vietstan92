@@ -18,14 +18,131 @@
 	5. group asking for jtac missions 
 
 ]]--
-ocs = {}
+cas = {}
+cas.unitName = "USA gnd 1"
 
-
-function ocs.radio ()
+function cas.radio ()
 
 end 
 
-function ocs.unitSpawner (vec2Gl)
+function cas.unitSpawner (pointVec3Gl)
+		local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "fighttest", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+			 mist.teleportToPoint(fightSpawn)
+			 --cas.newGndSpawn()
+end 
+
+function cas.unitSpawnerRed (pointVec3Gl)
+		local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "fighttestred", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+			 mist.teleportToPoint(fightSpawn)
+			 --cas.newGndSpawn()
+end 
+
+
+function cas.unitMover (pointVec3Gl)		
+	local group = Group.getByName(cas.unitName)                            --User provides rounds, ammo
+    local controller = group:getController()
+	controller:resetTask()
+	--Controller.resetTask(Controller self) 
+	
+	
+	-- local _groupVec3 = Group.getByName(cas.unitName):getUnit(1):getPoint() 
+	-- local path = {} --build the waypoint to, from for the unit
+	-- path[#path + 1] = mist.ground.buildWP (_groupVec3, nil, 1)
+    -- path[#path + 1] = mist.ground.buildWP (pointVec3Gl, nil, 1) 
+    -- mist.goRoute(cas.unitName, path)
+	 vars = 
+ {
+ group = group, 
+ point = pointVec3Gl,
+ }
+ mist.groupToRandomPoint(vars )
+		
+end 
+
+function cas.unitDetector (pointVec3Gl)
+
+end 
+
+function cas.unitShooter (vec2)
+	local group = Group.getByName(cas.unitName)                            --User provides rounds, ammo
+    local controller = group:getController()
+
+    local fireTask = { 
+        id = 'FireAtPoint', 
+        params = {
+        point = vec2,
+        radius = 100,
+        expendQty = 5,
+        expendQtyEnabled = true, 
+        }
+    }
+    controller:setTask(fireTask)
+end 
+
+function cas.unitHoldFire ()
+		local group = Group.getByName(cas.unitName)                            --User provides rounds, ammo
+		local con = group:getController()	
+		con:setOption(0, 4) --hold fire
+end 
+
+function cas.unitFire ()
+		local group = Group.getByName(cas.unitName)                            --User provides rounds, ammo
+		local con = group:getController()	
+		con:setOption(0, 2) -- fire
+end 
+
+function cas.unitExploder (pointVec3Gl)
+	trigger.action.explosion(pointVec3Gl, 1)
+	
+end 
+
+function cas.unitSmoker (pointVec3Gl)
+	trigger.action.effectSmokeBig(pointVec3Gl, 5, 0)
+end 
+
+function cas.unitImmortal ()
+		local group = Group.getByName(cas.unitName)                            --User provides rounds, ammo
+		local controller = group:getController()
+    local setImmortal = { id = 'SetImmortal', params = {value = true}}
+    controller:setCommand(setImmortal)
+end 
+
+
+function cas.unitBurning (pointVec3Gl)
+ -- local smokeFire = 
+	 -- {
+		 -- type = "Big smoke", 
+		 -- country = "USA", 
+		 -- category = "Effects", 
+		 -- x = pointVec3Gl.x, 
+		 -- y = pointVec3Gl.z,
+		 -- name = "SmokeSmallFire", 
+		 -- groupId = mist.getNextGroupId(), 
+		 -- clone = false, 
+		 -- dead = false, 
+		 -- heading = 0,
+	 -- }
+	timer.scheduleFunction(cas.unitExploder,pointVec3Gl, timer.getTime() + 10)
+	timer.scheduleFunction(cas.unitSmoker,pointVec3Gl, timer.getTime() + 10)
+end 
+
+function cas.unitSmoke (pointVec3Gl)
+	trigger.action.smoke(pointVec3Gl,2)
+end 
+
+function cas.unitDestroyer (pointVec3Gl)
 
 end 
 

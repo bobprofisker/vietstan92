@@ -113,6 +113,39 @@ do
 				--end of section  on sick ai trainers 
 				
 				
+				
+				
+				--start of section onCallCAS
+				elseif string.find (event.text, "blue") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					 cas.unitSpawner(pointVec3)
+				elseif string.find (event.text, "red") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					cas.unitSpawnerRed(pointVec3) 
+				--end of section onCallCAS
+				
+				elseif string.find (event.text, "smoke") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					 cas.unitBurning(pointVec3)
+				elseif string.find (event.text, "shoot") then 
+					cas.unitShooter(mist.utils.makeVec2(event.pos))
+				elseif string.find (event.text, "move") then 
+					cas.unitMover(event.pos) 
+				elseif string.find (event.text, "hold") then 
+					cas.unitHoldFire() 
+				elseif string.find (event.text, "fire") then 
+					cas.unitFire()
+				elseif string.find (event.text, "inv") then 
+					cas.unitImmortal()
+				elseif string.find (event.text, "white") then 
+					cas.unitSmoke(event.pos)
+
+
+				
+				
+				
+				
+				
 				else
 					--do nothing
 					
