@@ -145,3 +145,22 @@ return LLposNstring, LLposEstring
 
 end
 
+		--this sectoin should be kept if using CYC_MissionPlan.lua
+function plan.eventHandler (event) 
+	if (26 == event.id) then
+		--CYC_carrier.lua START of SECTION this sectoin should be kept if using CYC_carrier.lua
+		if string.find (event.text, "wpt") then 			
+				local wptxt = string.match(event.text, '%d')
+				if wptxt == nil then
+					notify("Enter valid wpt format",2)					
+				else
+					local Vec3 = mist.utils.makeVec3GL(event.pos)
+					plan.storeWP(Vec3,event.text,event.initiator)
+				end
+		end
+	end
+end
+
+do
+	mist.addEventHandler(plan.eventHandler)
+end -- goes with the do line

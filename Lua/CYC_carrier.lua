@@ -1408,6 +1408,67 @@ local LLposEstring = string.format('%.3i° %.2i\' %.3d\"', LLposfixE, LLposdegE2
 return LLposNstring, LLposEstring
 end
 
+
+function cvn.eventHandler(event)
+	if (26 == event.id) then
+		--CYC_carrier.lua START of SECTION this sectoin should be kept if using CYC_carrier.lua
+		
+		
+		if string.find (event.text, "cvn") then 
+					local carrierSpeed = string.match(event.text, '%d%d')
+					if carrierSpeed == nil then     
+					 notify("Enter in a speed",2)
+					elseif tonumber (carrierSpeed) <= 31  then						
+						cvnVec3 = mist.utils.makeVec3GL(event.pos)
+						cvn.Waypoint(carrierSpeed,cvnVec3) -- dependency file CYC_carrier.lua
+					else
+						notify("Invalid carrier speed: Please enter value from 01 to 30 Knots", 10)
+					end	
+					
+					
+					
+		elseif string.find (event.text, "lha") then 
+					local carrierSpeed = string.match(event.text, '%d%d')
+					if carrierSpeed == nil then     
+					 notify("Enter in a speed",2)
+					elseif tonumber (carrierSpeed) <= 31  then						
+						cvnVec3 = mist.utils.makeVec3GL(event.pos)
+						lha.Waypoint(carrierSpeed,cvnVec3) -- dependency file CYC_carrier.lua
+					else
+						notify("Invalid carrier speed: Please enter value from 01 to 30 Knots", 10)
+					end				
+					
+		elseif string.find (event.text, "rke") then 
+					local carrierSpeed = string.match(event.text, '%d%d')
+					if carrierSpeed == nil then     
+					 notify("Enter in a speed",2)
+					elseif tonumber (carrierSpeed) <= 31  then						
+						cvnVec3 = mist.utils.makeVec3GL(event.pos)
+						rke.Waypoint(carrierSpeed,cvnVec3) -- dependency file CYC_carrier.lua
+					else
+						notify("Invalid speed: Please enter value from 01 to 30 Knots", 10)
+					end				
+					
+		elseif string.find (event.text, "tlam") then 
+						rke.taskFire(mist.utils.makeVec2(event.pos))  
+		--END of SECTION
+		--CYC_carrier.lua END of SECTION for CYC_carrier.lua
+		
+		else
+			--do nothing
+			
+
+		--end of CYC_carrier.lua
+		
+		end -- this end goes with the first if string.find (event.text, "wpt") then 	
+		
+		
+	end -- goes with the if (26 == event.id) then line
+end --ends the function(event) line section 
+
+
+
+
 function cvn.location()
 	
    local vec3 = Group.getByName(cvn.carrierName):getUnit(1):getPoint()	
@@ -1422,5 +1483,10 @@ do
 	radioWindOverDeckCheck = missionCommands.addCommand ("Start em up", radioSubMenu, cvn.start)
 	radioWindOverDeckCheck = missionCommands.addCommand ("Start recovery cycle", radioSubMenu, cvn.recoverPlanes)
 	
+	--event handlers
+	
+	mist.addEventHandler(cvn.eventHandler)
 end
+
+
 

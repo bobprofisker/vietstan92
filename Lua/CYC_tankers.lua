@@ -31,7 +31,7 @@ function tanker.orbitPoint(pointVec3,name)
 						 params = { 
 						   pattern = 'Circle',
 						   point = mist.utils.makeVec2(pointVec3),
-						   altitude = 4000, --15,000ft
+						   altitude = 4572, --15,000ft
 								} 
 							}	
 
@@ -46,3 +46,16 @@ function tanker.orbitPoint(pointVec3,name)
 	Group.getByName(name):getController():pushTask(Tanker)
 end
 
+function tanker.eventHandler (event) 
+	if (26 == event.id) then
+		--CYC_carrier.lua START of SECTION this sectoin should be kept if using CYC_carrier.lua
+			if string.find (event.text, "fuel") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					tanker.orbitPoint(pointVec3,"Tanker 1")  
+		end
+	end
+end
+
+do
+	mist.addEventHandler(tanker.eventHandler)
+end --

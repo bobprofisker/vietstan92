@@ -134,6 +134,39 @@ function mudfight.reset()
 
 end
 
+function mudfight.eventHandler (event) 
+		if (26 == event.id) then
+		--CYC_carrier.lua START of SECTION this sectoin should be kept if using CYC_carrier.lua
+				if string.find (event.text, "cas") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					aaa.createAAAzone()  
+				-- --end of section on call CAS CYC_ocas.lua
+				
+				-- Start of section on CYC_tankers.lua
+				elseif string.find (event.text, "fuel") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					tanker.orbitPoint(pointVec3,"Tanker 1")  
+				--end of section on call CAS CYC_ocas.lua
+				
+				--start of sectoin on CYC_sickAItrainer.lua
+				elseif string.find (event.text, "sa2") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"2") 
+				elseif string.find (event.text, "sa3") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"3")  
+				elseif string.find (event.text, "sa6") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"6") 
+				elseif string.find (event.text, "sa10") then 
+					local pointVec3 = mist.utils.makeVec3GL(event.pos)
+					mudfight.sam(pointVec3,"10") 
+				end
+		end
+end
+
+
+
 do
     radioSubMenu = missionCommands.addSubMenu ("Trainer spawner")
 	radioFight4 = missionCommands.addCommand ("Mig19", radioSubMenu, dogfight.spawnMig19)
@@ -143,4 +176,9 @@ do
 	radioFight7 = missionCommands.addCommand ("su27", radioSubMenu, dogfight.su27)
 	radioFight = missionCommands.addCommand ("Reset all air", radioSubMenu, dogfight.reset)
 	radioFight = missionCommands.addCommand ("Reset all ground", radioSubMenu, mudfight.reset)
+	
+--event handler stuff
+
+		mist.addEventHandler(mudfight.eventHandler)
+	
 end
