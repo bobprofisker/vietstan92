@@ -37,7 +37,11 @@ function tanker.orbitPoint(pointVec3,name)
 
 		--Group.getByName(name):getController():popTask()--push/pop task is the other one
 		Group.getByName(name):getController():pushTask(orbit)--push/pop task is the other one
-		notify("Tanker relocating.",2)
+		notify("Arco 1 relocating  260 MHz (Chan 7 or 19)",30)
+		notify("Arco 1 Tacan on 10 Y (MVT).",30)
+		notify("",30)
+		notify("Texaco-2 holding at CVN-71  260 MHz (Chan 7 or 19)",30)
+		notify("Texaco-2 Tacan on 20 X (maybe Y) (CVN).",30)
 			Tanker = { 
 			  id = 'Tanker', 
 			  params = { 

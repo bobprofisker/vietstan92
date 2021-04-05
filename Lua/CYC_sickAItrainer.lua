@@ -61,52 +61,6 @@ end
 
 --local ref = mist.utils.makeVec3(mist.DBs.missionData.bullseye.blue, 0)
 
-function mudfight.sam(vec3,samType)	
-	if samType == "2" then
-		local samSpawn = 
-				 {
-				 groupId = mist.getNextGroupId(),
-				 groupName = "SAMSA2", 
-				 point = vec3, 
-				 action = 'clone',
-				 }	
-			 mist.teleportToPoint(samSpawn)
-			 mudfight.newGndSpawn()
-	elseif samType == "3" then
-		local samSpawn = 
-				 {
-				 groupId = mist.getNextGroupId(),
-				 groupName = "SAMSA3", 
-				 point = vec3, 
-				 action = 'clone',
-				 }	
-			 mist.teleportToPoint(samSpawn)
-			 mudfight.newGndSpawn()
-	elseif samType == "6" then
-		local samSpawn = 
-				 {
-				 groupId = mist.getNextGroupId(),
-				 groupName = "SAMSA6", 
-				 point = vec3, 
-				 action = 'clone',
-				 }	
-			 mist.teleportToPoint(samSpawn)
-			 mudfight.newGndSpawn()
-	elseif samType == "10" then
-		local samSpawn = 
-				 {
-				 groupId = mist.getNextGroupId(),
-				 groupName = "SAMSA10", 
-				 point = vec3, 
-				 action = 'clone',
-				 }	
-			 mist.teleportToPoint(samSpawn)
-			 mudfight.newGndSpawn()
-	end
-end
-
-
-
 
 function dogfight.reset()
 	

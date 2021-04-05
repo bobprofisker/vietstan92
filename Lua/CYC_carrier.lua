@@ -17,8 +17,8 @@
 -- Declaration
 cvn = {}
 cvn.carrierName = "CVN-71 Theodore Roosevelt" -- must match groupname in game
-cvn.carrierFreq = "127.0 MHz" -- what gets printed to people
-cvn.radioF = 127000000 -- the actual frequency of the carrier in Hz
+cvn.carrierFreq = "227.5 MHz" -- what gets printed to people
+cvn.radioF = 227500000 -- the actual frequency of the carrier in Hz
 cvn.carrierTacan = "71X"
 cvn.carrierICLS = "Chan 2"
 cvn.startUpTime = 900 -- DO NOT MAKE THIS LESS THAN 200 seconds. this is the time in seconds you want to give to people to start up the jets and be ready to launch in cyclic ops
@@ -27,7 +27,7 @@ cvn.landWindowTime = 900
 
 lha = {}
 lha.carrierName = "LHA-1 Tarawa" -- must match groupname in game
-lha.carrierFreq = "128.0 MHz"
+lha.carrierFreq = "247.5 MHz"
 lha.carrierTacan = "1X"
 lha.carrierICLS = "Chan 1"
 lha.startUpTime = 900 -- DO NOT MAKE THIS LESS THAN 200 seconds. this is the time in seconds you want to give to people to start up the jets and be ready to launch in cyclic ops

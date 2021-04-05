@@ -1,0 +1,376 @@
+    --  Name:                           CYC_zeus.lua
+    --  Author:                         Tony
+	-- assert(loadfile('C:\\Users\\hindsas\\Saved Games\\DCS.openbeta\\Missions\\Vietstan92\\Lua\\CYC_sickAItrainer.lua'))()
+    --  Dependencies:                   Mist.lua, CYC_do.lua
+    --  Description:
+    --      Creates firefights on the ground between units on the ground and enemy to replicate modern firefights, adds in jtac style 9 line (simplified) to hit units until the fight is over, enemy withdraws etc
+    --  Usage:
+    --      1. 
+	
+--[[List of outstanding work to do
+
+-- 1. 
+	2. aircraft
+	3. liveries
+	4. everything to dyn add table
+	5. units get named specifically b or r 1,2,3 etc
+	6. a list of tables that store which units exist and means the numbers dont get too hight
+	7. side specific notify
+
+]]--
+cas = {}
+cas.delimiter = "-" -- this is the thing we use to delimit commands
+radio = {}
+cas.laserTable = {}
+cas.laserCounter = 1
+cas.thisStore = ""
+cas.unitCounterBlue = 1
+cas.factionNameBlue = "USA gnd "
+cas.unitCounterRed = 1
+cas.factionNameRed = "IRAN gnd "
+
+
+
+
+
+----------------
+----------------
+--This section is the new completed functions, which work with any unit and delimiter
+
+
+----------------
+----------------
+
+
+
+function cas.unitSpawner (text,pointVec3Gl) 
+	
+	local unitInfo = cvn.mysplit(text, cas.delimiter)
+		
+
+	if unitInfo[1] == "btank" then
+					local unitName = cas.factionNameBlue .. cas.unitCounterBlue
+								mist.dynAdd(
+							{
+								country = 'USA',
+								category = 'vehicle',
+								--name = unitName,
+								units = 
+								{
+									[1] = 
+									{
+										x = pointVec3Gl.x,
+										y = pointVec3Gl.z,
+										type = 'M-1 Abrams',
+										livery_id = "desert",
+									},
+								}, -- end of units
+							} -- end of function
+							)
+			cas.unitCounterBlue = cas.unitCounterBlue + 1
+		elseif unitInfo[1] == "barmy" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "barmy", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)			
+				
+	elseif unitInfo[1] == "bapc" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "bapc", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "bcar" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "bcar", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "btopup" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "btopup", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)	
+	elseif unitInfo[1] == "brover" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "brover", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+elseif unitInfo[1] == "bengine" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "bengine", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "btruck" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "btruck", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "baaa" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "baaa", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "bmanpad" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "bmanpad", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "braaa" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "braaa", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "bflak" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "bflak", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "binf" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "binf", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "bmlrs" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "bmlrs", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "barty" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "barty", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+				
+				
+			----- END OF BLUE REGULAR FORCES
+				----- START OF RED REGULAR FORCES
+				
+				
+				
+				
+	elseif unitInfo[1] == "rtank" then
+					local unitName = cas.factionNameRed .. cas.unitCounterRed
+								mist.dynAdd(
+							{
+								country = 'Iran',
+								category = 'vehicle',
+								--name = unitName,
+								units = 
+								{
+									[1] = 
+									{
+										x = pointVec3Gl.x,
+										y = pointVec3Gl.z,
+										type = 'T-72B',
+										livery_id = "desert",
+									},
+								}, -- end of units
+							} -- end of function
+							)
+			cas.unitCounterRed = cas.unitCounterRed + 1
+	elseif unitInfo[1] == "rapc" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rapc", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+				
+		elseif unitInfo[1] == "rarmy" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rarmy", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+				
+		elseif unitInfo[1] == "rmlrs" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rmlrs", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+		elseif unitInfo[1] == "rarty" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rarty", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+				
+		elseif unitInfo[1] == "rscud" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rscud", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+				
+	elseif unitInfo[1] == "rcar" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rcar", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "rtruck" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rtruck", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "raaa" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "raaa", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "rmanpad" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rmanpad", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "rraaa" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rraaa", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "rflak" then
+				local fightSpawn = 
+				 {
+				 groupId = mist.getNextGroupId(),
+				 groupName = "rflak", 
+				 point = pointVec3Gl, 
+				 action = 'clone',
+				 }	
+				mist.teleportToPoint(fightSpawn)
+	elseif unitInfo[1] == "rinf
+	
+SAM SITES	
+	
+	bpatriot
+	bhawk
+	
+	
+	
+	rsatworsasix
+	rsaten
+	rsaeleven
+	rsarapier
+
+
+					
+btank-spawn #spawns a blue tank
+
+unitname-remove # removes a unit from the map
+
+unitname-laser  # default code 1688
+	unitname-laser-1567    #laser on 1567
+unitname-off #lasers off
+	
+unitname-fire  #fires 5 rounds 
+	unitname-fire-100-100 #fires 100 rounds in a 100 m radius
+
+unitname-smoke #white smoke
+
+unitname-safe  #sets weapons hold
+
+unitname-hot   #sets weapons free
+
+unitname-inv     #sets invincibility off (i.e. normal)
+	unitname-inv-on # makes invinicble
+												
+unitname-effect		#makes an explosion and a fire at point
+	unitname-effect-bomb    #just makes a bomb go off
+			
+unitname-move		#moves a unit off road flat outstanding
+	unitname-move-road   #makes a unit move on road
+	unitname-move-road-fast    #goes fast or slow 
+	unitname-move-slow        #goes slow off road
+
+
+USA gnd 16
+
+IRAN gnd 20
