@@ -1205,62 +1205,62 @@ end
 
 --this function for the time hack
 function cvn.tankstates()
-	trigger.action.radioTransmission("l10n/DEFAULT/tankstates.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/tankstates.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 
 function cvn.zeroRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/0rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/0rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.oneRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/1rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/1rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.twoRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/2rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/2rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.threeRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/3rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/3rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.fourRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/4rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/4rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.fiveRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/5rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/5rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.sixRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/6rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/6rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.sevenRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/7rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/7rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.eightRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/8rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/8rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.nineRec()
-	trigger.action.radioTransmission("l10n/DEFAULT/9rec.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/9rec.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.timeFifeen()
-	trigger.action.radioTransmission("l10n/DEFAULT/time15.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/time15.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.timeThirty()
-	trigger.action.radioTransmission("l10n/DEFAULT/time30.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/time30.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.timeMark()
-	trigger.action.radioTransmission("l10n/DEFAULT/timeMark.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/timeMark.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.windowOpen()
-	trigger.action.radioTransmission("l10n/DEFAULT/windowOpen.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/windowOpen.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.windowOpens()
-	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.windowOpens1()
-	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens1.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens1.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.windowOpens2()
-	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens2.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens2.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 function cvn.windowOpens5()
-	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens5.ogg", trigger.misc.getZone("radio").point, radio.modulation.AM, false, cvn.radioF, 200, "radio1")
+	trigger.action.radioTransmission("l10n/DEFAULT/windowOpens5.ogg", trigger.misc.getZone("radio").point, 0, false, cvn.radioF, 200, "radio1")
 end
 --this block is for the recovery sound files 
 

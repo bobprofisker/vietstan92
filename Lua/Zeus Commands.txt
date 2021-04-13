@@ -1,33 +1,8 @@
-    --  Name:                           CYC_zeus.lua
-    --  Author:                         Tony
-	-- assert(loadfile('C:\\Users\\hindsas\\Saved Games\\DCS.openbeta\\Missions\\Vietstan92\\Lua\\CYC_sickAItrainer.lua'))()
-    --  Dependencies:                   Mist.lua, CYC_do.lua
-    --  Description:
-    --      Creates firefights on the ground between units on the ground and enemy to replicate modern firefights, adds in jtac style 9 line (simplified) to hit units until the fight is over, enemy withdraws etc
-    --  Usage:
-    --      1. 
-	
---[[List of outstanding work to do
+Injirlik Airbase information Echo.  Time one two one five Zulu. Wind! two seven zero at 5. Temperature three four! Dewpoint one eight. Altimeter! two niner!seven two!  Expect visual approach runway two three in use! Departing runway two three! left hand military pattern in effect. VFR aircraft advise ground control on direction of flight! contact ground on two seven five decimal zero! Read back hold short instructions advise on initial contact you have information Echo!
 
--- 1. 
-	2. aircraft
-	3. liveries
-	4. everything to dyn add table
-	5. units get named specifically b or r 1,2,3 etc
-	6. a list of tables that store which units exist and means the numbers dont get too hight
-	7. side specific notify
 
-]]--
-cas = {}
-cas.delimiter = "-" -- this is the thing we use to delimit commands
-radio = {}
-cas.laserTable = {}
-cas.laserCounter = 1
-cas.thisStore = ""
-cas.unitCounterBlue = 1
-cas.factionNameBlue = "USA gnd "
-cas.unitCounterRed = 1
-cas.factionNameRed = "IRAN gnd "
+
+
 
 
 

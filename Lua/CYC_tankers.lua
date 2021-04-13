@@ -10,7 +10,7 @@
     --      3.
 	
 --[[List of outstanding work to do
-    1. 
+    1. racetrack between two fuel waypoints
 ]]--
 --Pre reqs for the CYC_MissionPlan.lua function
 
@@ -18,44 +18,97 @@
 --radio frequency should be 253 MHz and tacan will go up from 10Y to 10+x Y
 
 tanker = {}
-tanker.name = "Tanker 1"
+tanker.delimiter = "-"
+tanker.oneName = "probeone" --can't have numerical values in for some reason
+tanker.twoName = "probetwo" --can't have numerical values in for some reason
+tanker.threeName = "boomone" --can't have numerical values in for some reason
+tanker.fourName = "boomtwo" --can't have numerical values in for some reason
+
+function tanker.mysplit (inputstr, sep)
+        if sep == nil then
+                sep = "%s"
+        end
+        local t={}
+        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+                table.insert(t, str)
+        end
+        return t
+end
+
+
 
 function notify(message, displayFor) --activiy notify function
     trigger.action.outText(message, displayFor)
 end
 
-function tanker.orbitPoint(pointVec3,name)
+function tanker.orbitPoint(pointVec3,text)
 
-	local orbit = {
+	local unitInfo = tanker.mysplit(text, tanker.delimiter)
+	
+	if Group.getByName(unitInfo[1]) == nil then
+	elseif #Group.getByName(unitInfo[1]):getUnits() < 1 then		
+	else
+		local group = Group.getByName(unitInfo[1])
+		local controller = group:getController()
+		controller:resetTask()
+		-- 3rd value is height 
+			--if 3rd nil default
+		if unitInfo[3] == nil then
+			unitInfo[3] = 4572
+		elseif tonumber(unitInfo[3]) then
+			unitInfo[3] = math.floor(unitInfo[3]*0.3048)
+			--then do nothing as this is a valid number
+		else 
+			unitInfo[3] = 4572
+		end
+
+		local orbit = {
 					   id = 'Orbit', 
 						 params = { 
 						   pattern = 'Circle',
 						   point = mist.utils.makeVec2(pointVec3),
-						   altitude = 4572, --15,000ft
+						   altitude = unitInfo[3],
 								} 
 							}	
 
 		--Group.getByName(name):getController():popTask()--push/pop task is the other one
-		Group.getByName(name):getController():pushTask(orbit)--push/pop task is the other one
-		notify("Arco 1 relocating  260 MHz (Chan 7 or 19)",30)
-		notify("Arco 1 Tacan on 10 Y (MVT).",30)
-		notify("",30)
-		notify("Texaco-2 holding at CVN-71  260 MHz (Chan 7 or 19)",30)
-		notify("Texaco-2 Tacan on 20 X (maybe Y) (CVN).",30)
+		controller:pushTask(orbit)--push/pop task is the other one
+
+
 			Tanker = { 
 			  id = 'Tanker', 
 			  params = { 
 						} 
 						}
-	Group.getByName(name):getController():pushTask(Tanker)
-end
+		controller:pushTask(Tanker)
+		
+			if unitInfo[1] == tanker.oneName then	
+				notify("Arco 1 relocating  260 MHz (Chan 7 or 19)",30)
+				notify("Arco 1 Drogue. Tacan on 10 X (PBT).",30)
+			elseif unitInfo[1] == tanker.twoName then
+					notify("Arco 2 relocating  260 MHz (Chan 7 or 19)",30)
+					notify("Arco 2 Drogue. Tacan on 20 X (CVN).",30)
+			elseif unitInfo[1] == tanker.threeName then
+					notify("Shell  3 relocating  260 MHz (Chan 7 or 19)",30)
+					notify("Shell 3 Boom. Tacan on 30 X (BMT).",30)
+			elseif unitInfo[1] == tanker.fourName then
+					notify("Shell  4 relocating  260 MHz (Chan 7 or 19)",30)
+					notify("Shell 4 Boom. Tacan on 40 X (INC).",30)
+			else
+			end
+		
+	end
+end 
+
+
+
 
 function tanker.eventHandler (event) 
 	if (26 == event.id) then
 		--CYC_carrier.lua START of SECTION this sectoin should be kept if using CYC_carrier.lua
-			if string.find (event.text, "fuel") then 
+			if string.find (event.text, tanker.delimiter .. "fuel") then 
 					local pointVec3 = mist.utils.makeVec3GL(event.pos)
-					tanker.orbitPoint(pointVec3,"Tanker 1")  
+					tanker.orbitPoint(pointVec3,event.text)  
 		end
 	end
 end
