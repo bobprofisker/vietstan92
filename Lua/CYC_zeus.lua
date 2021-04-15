@@ -3456,7 +3456,274 @@ function gnd.unitSpawner (text,pointVec3Gl)
 			gnd.unitCounterRed = gnd.unitCounterRed + 1
 
 		end
+		----------------------------------------
+		----------------------------------------
+		
+		----------------------------------------
+		----------------------------------------
+	elseif unitInfo[1] == "rbase" then
+		local unitName = gnd.factionNameRed .. gnd.unitCounterRed
+					
+		local heading = 3.1415926535898		
+		if unitInfo[4] == nil or tonumber(unitInfo[4]) == false then
+		elseif tonumber(unitInfo[4]) then
+			heading = math.floor(unitInfo[4]*0.0174533)
+		end
 
+		if unitInfo[3] == nil then
+			unitType = ".Command Center"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)
+		gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "1" then
+			unitType = ".Command Center"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)
+			gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "2" then
+			unitType = "Tech combine"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "3" then
+			unitType = "Tech hangar A"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1	
+		elseif unitInfo[3] == "4" then
+			unitType = "TV tower"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)		
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "5" then
+			unitType = "Workshop A"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "6" then
+			unitType = "Small house 1C area"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+							)
+							gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "7" then
+			unitType = "house1arm"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "8" then
+			unitType = "Comms tower M"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "9" then
+			unitType = "FARP Ammo Dump Coating"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "10" then
+			unitType = "FARP CP Blindage"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "11" then
+			unitType = "FARP Tent"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "12" then
+			unitType = "Farm B"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "13" then
+			unitType = "Pump station"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+			elseif unitInfo[3] == "14" then
+			unitType = "Repair workshop"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "15" then
+			unitType = "Shelter"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "16" then
+			unitType = "Oil derrick"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+		elseif unitInfo[3] == "17" then
+			unitType = "Oil platform"
+			mist.dynAddStatic(
+							{
+								country = 'CJTF Blue',
+								category = 'Fortifications',
+								name = unitName,
+								type = unitType,
+								x = pointVec3Gl.x,
+							    y = pointVec3Gl.z,
+								heading = heading,
+							} -- end of function
+						)	
+						gnd.unitCounterRed = gnd.unitCounterRed + 1
+		end
+	
 	else
 		-- --do nada (not cuddles and not sexually)
 	end
@@ -3693,12 +3960,12 @@ function gnd.unitShooter(text,pointVec3)
 			local distance = 10
 			
 			if unitInfo[3] == nil then
-			else
-				expend = tonumber(unitInfo[3]) 
+			else 
+				expend = tonumber(unitInfo[3])
 			end
 			if unitInfo[4] == nil then
 			else
-				distance = tonumber(unitInfo[4])
+				distance =  tonumber(unitInfo[4])
 			end
 
 			local fireTask = { 
@@ -3747,16 +4014,33 @@ function gnd.effect(text,pointVec3)
 
 	local unitInfo = gnd.mysplit(text, gnd.delimiter)
 		 
-			if unitInfo[2] == nil then
-				trigger.action.explosion(pointVec3, 1)
-				trigger.action.effectSmokeBig(pointVec3, 5, 0)
-			elseif unitInfo[2] == "bomb" then
-				trigger.action.explosion(pointVec3, 1)
-			else
-				trigger.action.effectSmokeBig(pointVec3, 5, 0)
-			end
 
-	
+	if unitInfo[2] == nil then
+	elseif unitInfo[2] == "1" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 5, 0)
+	elseif unitInfo[2] == "2" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 2, 0)
+	elseif unitInfo[2] == "3" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 3, 0)
+	elseif unitInfo[2] == "4" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 4, 0)
+	elseif unitInfo[2] == "5" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 5, 0)
+	elseif unitInfo[2] == "6" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 6, 0)
+	elseif unitInfo[2] == "7" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 7, 0)
+	elseif unitInfo[2] == "8" then
+		trigger.action.explosion(pointVec3, 1)
+		trigger.action.effectSmokeBig(pointVec3, 8, 0)
+	end
 end
 
 function gnd.smoke (text,pointVec3Gl)
@@ -3778,6 +4062,106 @@ function gnd.smoke (text,pointVec3Gl)
 			else
 				trigger.action.smoke(pointVec3Gl,2)
 			end
+
+end
+
+function gnd.illum (text,pointVec3Gl)
+
+	local unitInfo = gnd.mysplit(text, gnd.delimiter)
+	
+	-- power a value between 1 and 1000000.
+	
+	local illumLocation = {}
+	illumLocation.x = pointVec3Gl.x
+	illumLocation.y = pointVec3Gl.y + 750
+	illumLocation.z = pointVec3Gl.z
+	
+	
+	if Group.getByName(unitInfo[1]) == nil then
+			if unitInfo[3] == nil then
+				trigger.action.illuminationBomb(illumLocation,1000)
+
+			else
+				trigger.action.illuminationBomb(illumLocation,1000)
+			end
+
+	elseif #Group.getByName(unitInfo[1]):getUnits() < 1 then
+				trigger.action.illuminationBomb(illumLocation,1000)
+	else
+		local group = Group.getByName(unitInfo[1])
+		local controller = group:getController()
+		local position = group:getUnit(1):getPoint()
+				 
+				local illumLocation = {}
+				illumLocation.x = position.x
+				illumLocation.y = position.y + 750
+				illumLocation.z = position.z
+		
+			if unitInfo[3] == nil then
+				trigger.action.illuminationBomb(illumLocation,1000)
+			else
+				trigger.action.illuminationBomb(illumLocation,1000)
+			end
+	end
+
+end 
+
+function gnd.flares (text,pointVec3Gl)
+
+	local unitInfo = gnd.mysplit(text, gnd.delimiter)
+		 
+	if Group.getByName(unitInfo[1]) == nil then
+			if unitInfo[3] == nil then
+				trigger.action.signalFlare(pointVec3Gl,0,3)
+			elseif unitInfo[3] == "g" then
+				trigger.action.signalFlare(pointVec3Gl,0,3)
+			elseif unitInfo[3] == "r" then
+				trigger.action.signalFlare(pointVec3Gl,1,3)
+			elseif unitInfo[3] == "w" then
+				trigger.action.signalFlare(pointVec3Gl,2,3)
+			elseif unitInfo[3] == "y" then
+				trigger.action.signalFlare(pointVec3Gl,3,3)
+			else
+				trigger.action.signalFlare(pointVec3Gl,0,3)
+			end
+
+	elseif #Group.getByName(unitInfo[1]):getUnits() < 1 then
+				 
+		 
+			if unitInfo[3] == nil then
+				trigger.action.signalFlare(pointVec3Gl,0,3)
+			elseif unitInfo[3] == "g" then
+				trigger.action.signalFlare(pointVec3Gl,0,3)
+			elseif unitInfo[3] == "r" then
+				trigger.action.signalFlare(pointVec3Gl,1,3)
+			elseif unitInfo[3] == "w" then
+				trigger.action.signalFlare(pointVec3Gl,2,3)
+			elseif unitInfo[3] == "y" then
+				trigger.action.signalFlare(pointVec3Gl,3,3)
+			else
+				trigger.action.signalFlare(pointVec3Gl,0,3)
+			end
+
+	else
+		local group = Group.getByName(unitInfo[1])
+		local controller = group:getController()
+		local position = group:getUnit(1):getPoint()
+				 
+		 
+			if unitInfo[3] == nil then
+				trigger.action.signalFlare(position,0,3)
+			elseif unitInfo[3] == "g" then
+				trigger.action.signalFlare(position,0,3)
+			elseif unitInfo[3] == "r" then
+				trigger.action.signalFlare(position,1,3)
+			elseif unitInfo[3] == "w" then
+				trigger.action.signalFlare(position,2,3)
+			elseif unitInfo[3] == "y" then
+				trigger.action.signalFlare(position,3,3)
+			else
+				trigger.action.signalFlare(position,0,3)
+			end
+	end
 
 end 
 
@@ -3819,7 +4203,13 @@ function gnd.eventHandler (event)
 				gnd.unitShooter(event.text,pointVec3)
 			elseif string.find(event.text, gnd.delimiter .. "smoke") then
 				local pointVec3 = mist.utils.makeVec3GL(event.pos)
-				gnd.smoke(event.text,pointVec3)		
+				gnd.smoke(event.text,pointVec3)	
+			elseif string.find(event.text, gnd.delimiter .. "flare") then
+				local pointVec3 = mist.utils.makeVec3GL(event.pos)
+				gnd.flares(event.text,pointVec3)	
+			elseif string.find(event.text, gnd.delimiter .. "illum") then
+				local pointVec3 = mist.utils.makeVec3GL(event.pos)
+				gnd.illum(event.text,pointVec3)					
 			elseif string.find(event.text, gnd.delimiter .. "safe") then
 				local pointVec3 = mist.utils.makeVec3GL(event.pos)
 				gnd.unitSafe(event.text,pointVec3)
@@ -3829,7 +4219,7 @@ function gnd.eventHandler (event)
 			elseif string.find(event.text, gnd.delimiter .. "inv") then
 				local pointVec3 = mist.utils.makeVec3GL(event.pos)
 				gnd.unitInv(event.text,pointVec3)		
-			elseif string.find(event.text, gnd.delimiter .. "effect") then
+			elseif string.find(event.text, gnd.delimiter ..  "effect") then
 				local pointVec3 = mist.utils.makeVec3GL(event.pos)
 				gnd.effect(event.text,pointVec3)	
 			elseif string.find(event.text, gnd.delimiter .. "remove") then

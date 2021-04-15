@@ -18,7 +18,7 @@
 --radio frequency should be 253 MHz and tacan will go up from 10Y to 10+x Y
 
 tanker = {}
-tanker.delimiter = "-"
+tanker.delimiter = "."
 tanker.oneName = "probeone" --can't have numerical values in for some reason
 tanker.twoName = "probetwo" --can't have numerical values in for some reason
 tanker.threeName = "boomone" --can't have numerical values in for some reason
